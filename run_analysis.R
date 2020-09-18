@@ -14,19 +14,19 @@ if(!file.exists(folder_name)){
 }
 
 # Read train folder files 
- x_train_file <- read.table("F:/Geting and cleaning data R/Getting and cleaning data with R project/UCI HAR Dataset/train/X_train.txt")
- y_train_file <- read.table("F:/Geting and cleaning data R/Getting and cleaning data with R project/UCI HAR Dataset/train/y_train.txt")
- subject_train_file <- read.table("F:/Geting and cleaning data R/Getting and cleaning data with R project/UCI HAR Dataset/train/subject_train.txt")
+ x_train_file <- read.table("F:Getting and cleaning data with R project/UCI HAR Dataset/train/X_train.txt")
+ y_train_file <- read.table("F:/Getting and cleaning data with R project/UCI HAR Dataset/train/y_train.txt")
+ subject_train_file <- read.table("F:/Getting and cleaning data with R project/UCI HAR Dataset/train/subject_train.txt")
 
  # Read test folder files
  
- x_test_file <- read.table("F:/Geting and cleaning data R/Getting and cleaning data with R project/UCI HAR Dataset/test/X_test.txt")
- y_test_file <- read.table("F:/Geting and cleaning data R/Getting and cleaning data with R project/UCI HAR Dataset/test/y_test.txt")
- subject_test_file <- read.table("F:/Geting and cleaning data R/Getting and cleaning data with R project/UCI HAR Dataset/test/subject_test.txt")
+ x_test_file <- read.table("F:/Getting and cleaning data with R project/UCI HAR Dataset/test/X_test.txt")
+ y_test_file <- read.table("F:/Getting and cleaning data with R project/UCI HAR Dataset/test/y_test.txt")
+ subject_test_file <- read.table("F:/Getting and cleaning data with R project/UCI HAR Dataset/test/subject_test.txt")
 # read features and labels file
  
-  features <- read.table("F:/Geting and cleaning data R/Getting and cleaning data with R project/UCI HAR Dataset/features.txt")
- activity_labels <-read.table("F:/Geting and cleaning data R/Getting and cleaning data with R project/UCI HAR Dataset/activity_labels.txt")
+  features <- read.table("F:/Getting and cleaning data with R project/UCI HAR Dataset/features.txt")
+ activity_labels <-read.table("F:/Getting and cleaning data with R project/UCI HAR Dataset/activity_labels.txt")
 # merge test and train files
 X_merged_data <- rbind(x_train_file,x_test_file)
 y_merged_data <- rbind(y_train_file,y_test_file)
@@ -81,7 +81,7 @@ names(Extracted_col)<-gsub("angle", "Angle", names(Extracted_col))
 
 names(Extracted_col)
 
-## 
+## create the tidydata text file 
 
 Data_set<-aggregate(. ~Subject + Activity, Extracted_col, mean)
 Data_set<-Data_set[order(Data_set$Subject,Data_set$Activity),]
